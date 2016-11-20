@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import rx.Observable;
 import rx.functions.Action0;
+import rx.subjects.PublishSubject;
 import rx.subscriptions.Subscriptions;
 
 /**
@@ -16,7 +17,32 @@ import rx.subscriptions.Subscriptions;
 
 public class RefactorCallback {
 
+  final PublishSubject<Integer> ps = PublishSubject.create();
+
   public RefactorCallback() {
+    safeUnsub();
+    publishSub();
+    ps.subscribe(); // thus it can have multiple subscribers and when the button is pushed, all subs
+    // will get the event
+    // Subjects, onError will drop and swallow any onErrors after the first
+  }
+
+  private void publishSub() {
+    Button b = new Button(new Activity());
+    b.setOnClickListener(view -> {
+      ps.onNext(view.getId());
+    });
+
+    // above is the subject object in its total with both thesubject and the onclick listener
+    // below is the call
+  }
+
+  Observable<Integer> sub() {
+    return ps;
+  }
+
+  private void safeUnsub() {
+
     Button b = new Button(new Activity());
     b.setOnClickListener(view -> {
     });
