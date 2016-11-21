@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.fernandocejas.frodo.annotation.RxLogObservable;
+import com.nullcognition.reactiveprogrammingwithrxjava.chap02.P04;
 import rx.Observable;
 import rx.schedulers.Schedulers;
 
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     //new P03();
-
-
+    new P04();
   }
 }
