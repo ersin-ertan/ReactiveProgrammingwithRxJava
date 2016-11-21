@@ -1,5 +1,6 @@
-package com.nullcognition.reactiveprogrammingwithrxjava;
+package com.nullcognition.reactiveprogrammingwithrxjava.chap02;
 
+import com.nullcognition.reactiveprogrammingwithrxjava.MainActivity;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;

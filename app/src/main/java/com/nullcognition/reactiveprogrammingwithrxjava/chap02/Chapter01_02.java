@@ -1,4 +1,4 @@
-package com.nullcognition.reactiveprogrammingwithrxjava;
+package com.nullcognition.reactiveprogrammingwithrxjava.chap02;
 
 import com.fernandocejas.frodo.annotation.RxLogObservable;
 import java.util.concurrent.TimeUnit;
